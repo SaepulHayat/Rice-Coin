@@ -1,0 +1,72 @@
+@font-face {
+    font-family: 'font-all-default';
+    src: url('./fonts/Poppins/Poppins-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'font-logo';
+    src: url('./fonts/Pacifico/Pacifico-Regular.ttf');
+    font-weight: 500;
+    font-style: normal;
+    color: #4b0082;
+}
+
+@font-face {
+    font-family: 'font-content1';
+    src: url('./fonts/Rubik_Scribble/RubikScribble-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'font-all-default2';
+    src: url('fonts/Roboto/Roboto-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*{
+    margin: 0;
+    padding:0;
+}
+
+/* animation logo excanges */
+@keyframes marquee{
+    0%{
+        right: 180%;
+    }
+    100%{
+        right: -50%;
+    }
+}
+
+.marquee{
+    display: flex;
+    position: relative;
+    animation: marquee 25s linear infinite;
+}
+
+body{
+    font-family: font-all-default;
+}
+
+.font-logo{
+    font-family: font-logo;
+}
+
+/* dark mode */
+html.dark{
+    background-color: #1a202c;
+    color: white;
+}
+section.dark{
+    background-color: #1a202c;
+}
+
+.text-shadow-hero{
+    shadow: 2px 2px 5px rgba(128, 0, 128, 0.7);
+    font-family: font-content1;
+}
+

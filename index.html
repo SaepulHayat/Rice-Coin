@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Charset -->
+    <meta charset="UTF-8">
+
+    <!-- Responsiveness -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title -->
+    <title>Rice Coin Inc. - Revolutionizing Crypto Investments</title>
+
+    <!-- Description (SEO) -->
+    <meta name="description"
+        content="Rice Coin Inc. is leading the crypto world with innovative blockchain solutions. Discover the future of decentralized finance with us.">
+
+    <!-- Keywords (SEO) -->
+    <meta name="keywords"
+        content="Rice Coin, cryptocurrency, blockchain, decentralized finance, crypto exchange, Web3, investment">
+
+    <!-- Author -->
+    <meta name="author" content="Rice Coin Inc. Team">
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#1E90FF">
+
+    <!-- Robots (SEO) -->
+    <meta name="robots" content="index, follow">
+
+    <!-- Favicon -->
+    <link rel="icon" href="./assets/coin-logo/logo.png" type="image/x-icon">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:image:alt" content="Rice Coin logo showcasing decentralized finance innovation">
+    <meta property="og:image" content="https://ricecoin.com/assets/images/banner1.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Rice Coin Inc. - Revolutionizing Crypto Investments">
+    <meta name="twitter:description"
+        content="Rice Coin Inc. is leading the crypto world with innovative blockchain solutions.">
+    <meta name="twitter:image" content="./images/logo.png">
+
+    <!-- Preconnect (Performance Optimization) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+    <!-- Prefetch & Preload (Critical resources for faster loading) -->
+    <link rel="preload" href="./images/logo.png" as="image">
+    <link rel="preload" href="styles.css" as="style">
+
+    <!-- Boxicons -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+    <!-- Header -->
+    <header
+        class="w-full top-0 fixed z-1000 flex justify-between items-center py-4 px-6 bg-gradient-to-r from-red-500 to-purple-600 gap-2">
+        <!-- logo section -->
+        <div class="flex items-center">
+            <a href="" class="flex items-center space-x-2">
+                <img src="./assets/coin-logo/logo.png" alt="Logo Rice Coin Inc." class="w-12 h-12">
+                <h1 class="hidden lg:flex font-logo text-2xl text-white">Rice Coin Inc.</h1>
+            </a>
+        </div>
+        <!-- navigations  -->
+        <nav class="hidden md:flex space-x-6 text-white font-bold">
+            <ul class="flex space-x-6 mr-12">
+                <li><a href="#about" class="hover:text-yellow-300 transition-colors">about</a></li>
+                <li><a href="#features" class="hover:text-yellow-300 transition-colors">features</a></li>
+                <li><a href="#roadmap" class="hover:text-yellow-300 transition-colors">roadmap</a></li>
+                <li><a href="#contact" class="hover:text-yellow-300 transition-colors">contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- Search Bar -->
+        <div class="relative">
+            <input type="text" placeholder="Search..."
+                class="pl-4 pr-4 py-2 w-full sm:w-48 lg:w-64 rounded-full bg-white dark:bg-black text-black dark:text-white focus:outline-none focus:ring focus:ring-yellow-300 placeholder-gray-400 transition-all duration-300" />
+            <i class="bx bx-search absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+        </div>
+
+        <!-- Dark Mode Toggle -->
+        <div class="flex space-x-4 items-center">
+            <button id="darkModeToggle" class="text-xl">
+                <i class="bx bx-sun hidden" id="sunIcon"></i>
+                <i class="bx bxs-moon" id="moonIcon"></i>
+            </button>
+
+            <!-- Hamburger Button -->
+            <button id="hamburgerButton" class="block md:hidden text-2xl">
+                <i class="bx bx-menu"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Sidebar -->
+    <aside id="sidebar"
+        class="fixed top-0 left-0 h-full bg-gradient-to-r from-red-500 to-purple-600 shadow-lg text-white w-64 flex flex-col items-start justify-center py-6 px-2 md:hidden transition-transform transform -translate-x-full md:translate-x-0">
+
+        <!-- Logo Section -->
+        <div class="flex items-center space-x-2 mb-8 px-4">
+            <img src="./assets/coin-logo/logo.png" alt="Logo Rice Coin Inc." class="w-8 h-8">
+            <h1 class="font-logo text-xl">Rice Coin Inc.</h1>
+        </div>
+
+        <!-- Close Button -->
+        <button id="closeSidebar" class="absolute top-4 right-4 text-xl text-white md:hidden">
+            <i class="bx bx-x"></i>
+        </button>
+
+        <!-- Navigation Links -->
+        <nav class="w-full">
+            <ul class="flex flex-col space-y-4">
+                <li>
+                    <a href="#about"
+                        class="flex items-center px-6 py-3 text-lg hover:bg-yellow-500 rounded-lg transition-all">
+                        <i class="bx bx-info-circle text-2xl mr-3"></i>
+                        About
+                    </a>
+                </li>
+                <li>
+                    <a href="#features"
+                        class="flex items-center px-6 py-3 text-lg hover:bg-yellow-500 rounded-lg transition-all">
+                        <i class="bx bx-star text-2xl mr-3"></i>
+                        Features
+                    </a>
+                </li>
+                <li>
+                    <a href="#roadmap"
+                        class="flex items-center px-6 py-3 text-lg hover:bg-yellow-500 rounded-lg transition-all">
+                        <i class="bx bx-map text-2xl mr-3"></i>
+                        Roadmap
+                    </a>
+                </li>
+                <li>
+                    <a href="#contact"
+                        class="flex items-center px-6 py-3 text-lg hover:bg-yellow-500 rounded-lg transition-all">
+                        <i class="bx bx-envelope text-2xl mr-3"></i>
+                        Contact
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Social Media Links -->
+        <div class="mt-auto flex space-x-4 ml-16">
+            <a href="#" class="hover:text-blue-400 transition">
+                <i class="bx bxl-facebook text-2xl"></i>
+            </a>
+            <a href="#" class="hover:text-blue-500 transition">
+                <i class="bx bxl-twitter text-2xl"></i>
+            </a>
+            <a href="#" class="hover:text-pink-500 transition">
+                <i class="bx bxl-instagram text-2xl"></i>
+            </a>
+        </div>
+    </aside>
+
+    <!-- Content -->
+    <main>
+        <!-- Hero Section -->
+        <section
+            class="text-black dark:text-white min-h-screen flex items-center justify-center px-4 sm:px-6 md:px-8 pt-16">
+            <div class="max-w-xl md:max-w-3xl text-center space-y-6">
+                <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-shadow-hero">
+                    Revolutionizing Blockchain. <br> Empowering Communities.
+                </h1>
+                <p class="text-sm sm:text-base md:text-lg lg:text-xl text-gray-900 dark:text-white">
+                    Join the evolution with Rice Coin: secure, fast, and built for everyone. Invest in the future of
+                    decentralized finance today.
+                </p>
+                <!-- Buttons -->
+                <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#startBuilding"
+                        class="px-8 py-3 text-base font-medium text-white bg-gradient-to-r from-purple-600 to-pink-500 hover:from-pink-500 hover:to-purple-600 rounded-full shadow-lg transition duration-300 text-center">
+                        Start Building
+                    </a>
+                    <a href="resources"
+                        class="px-8 py-3 text-base font-medium text-white bg-gradient-to-r from-purple-600 to-pink-500 hover:from-pink-500 hover:to-purple-600 rounded-full shadow-lg transition duration-300 text-center">
+                        Resources
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Rice coin description section -->
+        <section
+            class="min-h-screen bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-200 dark:bg-gray-900 py-12 px-16 mt-16">
+            <article class="container mx-auto space-y-16">
+                <!-- content 1 -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+                    <div class="flex justify-center">
+                        <img src="./assets/article-images/image-article1.jpg" alt=""
+                            class="rounded-lg shadow-xl md:size-58">
+                    </div>
+                    <!-- description -->
+                    <div>
+                        <h1 class="text-4xl font-bold text-gray-800 mb-4">Economic Transformation with
+                            <span class="text-blue-500">Rice Coin</span>
+                        </h1>
+                        <p class="leading-relaxed mb-6">
+                            Rice Coin supports the development of the agricultural sector by leveraging blockchain for
+                            transparency
+                            and efficiency.
+                            The system helps farmers, consumers, and the government prevent hoarding of staple foods.
+                        </p>
+                        <ol>
+                            <li class="flex items-center gap-2">
+                                <i class='bx bx-check text-green-500 text-2xl text-bold items-center'></i> Reducing the
+                                inequality of distribution of basic commodities.
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class='bx bx-check text-green-500 text-2xl text-bold items-center'></i>Supporting
+                                farmers with fair incentives.
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class='bx bx-check text-green-500 text-2xl text-bold items-center'></i>Transparent
+                                and secure blockchain.
+                            </li>
+                        </ol>
+                        <button class="mt-8">
+                            <a href=""
+                                class="px-8 py-3 text-base font-medium text-white bg-gradient-to-r from-purple-600 to-pink-500 hover:from-pink-500 hover:to-purple-600 rounded-full shadow-lg transition duration-300 text-center">Learn
+                                More</a>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- content 2 -->
+                <!-- description -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+
+                    <div>
+                        <h1 class="text-4xl font-bold text-gray-800 mb-4">Increasing government
+                            <sapn class="text-blue-500">transparency</sapn>
+                        </h1>
+                        <p class="leading-relaxed mb-6">
+                            With Rice Coin, the government can monitor the distribution of food transparently. This
+                            reduces the risk of price
+                            manipulation and hoarding.
+                        </p>
+                        <ol>
+                            <li class="flex items-center gap-2">
+                                <i class='bx bx-check text-green-500 text-2xl text-bold items-center'></i>Real-time
+                                monitoring of staple food distribution.
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class='bx bx-check text-green-500 text-2xl text-bold items-center'></i>Ensuring
+                                equitable distribution of food stocks.
+                            </li>
+                        </ol>
+                        <button class="mt-8">
+                            <a href=""
+                                class="px-8 py-3 text-base font-medium text-white bg-gradient-to-r from-purple-600 to-pink-500 hover:from-pink-500 hover:to-purple-600 rounded-full shadow-lg transition duration-300 text-center">Learn
+                                More</a>
+                        </button>
+                    </div>
+                    <div class="flex justify-center">
+                        <img src="assets/article-images/image-article2.jpg" alt=""
+                            class="rounded-lg shadow-xl md:size-58">
+                    </div>
+                </div>
+
+                <!-- content 3 -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+
+                    <div class="flex justify-center">
+                        <img src="assets/article-images/image-article3.jpg" alt=""
+                            class="rounded-lg shadow-xl md:size-58">
+                    </div>
+                    <!-- description -->
+                    <div>
+                        <h1 class="text-4xl font-bold text-gray-800 mb-4">Innovation for
+                            <sapn class="text-blue-500"> staple foods</sapn>
+                        </h1>
+                        <p class="leading-relaxed mb-6">
+                            Rice Coin facilitates the trading of staple foods and connects farmers with consumers
+                            directly.
+                        </p>
+                        <ol>
+                            <li class="flex items-center gap-2">
+                                <i class='bx bx-check text-green-500 text-2xl text-bold items-center'></i> Minimizing
+                                the supply chain.
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class='bx bx-check text-green-500 text-2xl text-bold items-center'></i> Direct
+                                incentives for farmers.
+                            </li>
+                        </ol>
+                        <button class="mt-8">
+                            <a href=""
+                                class="px-8 py-3 text-base font-medium text-white bg-gradient-to-r from-purple-600 to-pink-500 hover:from-pink-500 hover:to-purple-600 rounded-full shadow-lg transition duration-300 text-center">Learn
+                                More</a>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- content 4 -->
+                <!-- description -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+
+                    <div>
+                        <h1 class="text-4xl font-bold text-gray-800 mb-4">Technology
+                            <span class="text-blue-500"> Blockchain</span>
+                        </h1>
+                        <p class="leading-relaxed mb-6">
+                            The security and transparency offered by blockchain make Rich Coin a trusted payment tool
+                            for basic necessities.
+                        </p>
+                        <ol>
+                            <li class="flex items-center gap-2">
+                                <i class='bx bx-check text-green-500 text-2xl text-bold items-center'></i>Audit
+                                transparan dan real-time.
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class='bx bx-check text-green-500 text-2xl text-bold items-center'></i>Meningkatkan
+                                kepercayaan dalam perdagangan bahan pokok.
+                            </li>
+                        </ol>
+                        <button class="mt-8">
+                            <a href=""
+                                class="px-8 py-3 text-base font-medium text-white bg-gradient-to-r from-purple-600 to-pink-500 hover:from-pink-500 hover:to-purple-600 rounded-full shadow-lg transition duration-300 text-center">Learn
+                                More</a>
+                        </button>
+                    </div>
+                    <div class="flex justify-center">
+                        <img src="assets/article-images/image-article4.jpg" alt=""
+                            class="rounded-lg shadow-xl md:size-58">
+                    </div>
+                </div>
+
+            </article>
+        </section>
+
+        <section class="relative">
+            <div class="bg-gray-900 w-full py-4 overflow-hidden md:py-8">
+                <h2 class="text-center text-sm font-semibold text-white md:text-3xl">Top Crypto Exchanges</h2>
+                <div class="container marquee flex items-center gap-16">
+                    <img src="./assets/exchanges-logo/tokocrypto-logo.png" alt="image tokocrypto"
+                        class="marquee size-28 object-contain md:size-48">
+
+                    <img src="./assets/exchanges-logo/mexc-logo.png" alt="image mexc"
+                        class="marquee size-28 object-contain md:size-48">
+
+                    <img src="./assets/exchanges-logo/kucoin-logo.png" alt="image kukoin"
+                        class="marquee size-28 object-contain md:size-48">
+
+                    <img src="./assets/exchanges-logo/kraken-logo.png" alt="image kraken"
+                        class="marquee size-28 object-contain md:size-48">
+
+                    <img src="./assets/exchanges-logo/indodax-logo.png" alt="image indodax"
+                        class="marquee size-28 object-contain md:size-48">
+
+                    <img src="./assets/exchanges-logo/gateio-logo.png" alt="image gateio"
+                        class="marquee size-28 object-contain md:size-48">
+
+                    <img src="./assets/exchanges-logo/coinbase-logo.png" alt="image coinbase-logo"
+                        class="marquee size-28 object-contain md:size-48">
+
+                    <img src="./assets/exchanges-logo/binance-logo.png" alt="image binance"
+                        class="marquee size-28 object-contain md:size-48">
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- feature -->
+        <section id="features" class="py-12 bg-gradient-to-r from-cyan-400 to-blue-500 dark:bg-gray-900">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">Our Featured Features</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Fitur 1: Keamanan Tingkat Tinggi -->
+                    <div class="text-center bg-white p-6 rounded-lg shadow-md hover:bg-gray-200">
+                        <div class="flex items-center justify-center mb-4 text-blue-500">
+                            <i class="bx bxs-lock-alt text-5xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Our Featured Features</h3>
+                        <p class="text-gray-600">Our blockchain technology provides high-level encryption to protect all
+                            your transactions.</p>
+                    </div>
+                    <!-- Fitur 2: Transaksi Cepat -->
+                    <div class="text-center bg-white p-6 rounded-lg shadow-md hover:bg-gray-200">
+                        <div class="flex items-center justify-center mb-4 text-orange-500">
+                            <i class="bx bx-rocket text-5xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Fast Transactions and Low Fees</h3>
+                        <p class="text-gray-600">Enjoy fast, low-cost transactions without the hassles of traditional
+                            banking.</p>
+                    </div>
+                    <!-- Fitur 3: Aksesibilitas Global -->
+                    <div class="text-center bg-white p-6 rounded-lg shadow-md hover:bg-gray-200">
+                        <div class="flex items-center justify-center mb-4 text-green-500">
+                            <i class="bx bx-globe text-5xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Global Accessibility</h3>
+                        <p class="text-gray-600">Rice Coin opens opportunities for anyone around the world without
+                            geographical limitations.</p>
+                    </div>
+                    <!-- Fitur 4: Ramah Lingkungan -->
+                    <div class="text-center bg-white p-6 rounded-lg shadow-md hover:bg-gray-200">
+                        <div class="flex items-center justify-center mb-4 text-purple-500">
+                            <i class="bx bx-leaf text-5xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Environmentally friendly</h3>
+                        <p class="text-gray-600">Rice Coin supports sustainability with energy-efficient blockchain
+                            technology.</p>
+                    </div>
+                    <!-- Fitur 5: Staking Rewards -->
+                    <div class="text-center bg-white p-6 rounded-lg shadow-md hover:bg-gray-200">
+                        <div class="flex items-center justify-center mb-4 text-yellow-500">
+                            <i class="bx bxs-wallet text-5xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Staking Rewards</h3>
+                        <p class="text-gray-600">Get attractive rewards by staking your Rice Coins.</p>
+                    </div>
+                    <!-- Fitur 6: Transparansi -->
+                    <div class="text-center bg-white p-6 rounded-lg shadow-md hover:bg-gray-200">
+                        <div class="flex items-center justify-center mb-4 text-teal-500">
+                            <i class="bx bx-show text-5xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Full Transparency</h3>
+                        <p class="text-gray-600">Our public blockchain ensures all transactions are transparent and
+                            verifiable.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- roadmap section -->
+        <section id="roadmap" class="py-16 bg-white text-gray-900 dark:bg-gray-900 ">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-center mb-6">The Roadmap</h2>
+                <p class="text-center text-lg text-gray-400 mb-12">
+                    Explore our journey in building Rice Coin for a better future.
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- phase 1 -->
+                    <div class="text-center bg-gray-800 p-6 rounded-lg shadow-md hover:bg-gray-700">
+                        <div class="flex items-center justify-center mb-4 text-red-500">
+                            <i class="bx bx-rocket text-5xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2 text-white ">Phase 1</h3>
+                        <p class="text-sm text-gray-400 uppercase mb-2">Launch & Investment</p>
+                        <p class="text-gray-300">Rice Coin launch and massive promotion to attract early investors.</p>
+                    </div>
+
+                    <!-- phase 2 -->
+                    <div class="text-center bg-gray-800 p-6 rounded-lg shadow-md hover:bg-gray-700">
+                        <div class="flex items-center justify-center mb-4 text-red-500">
+                            <i class="bx bx-link text-5xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2 text-white">Phase 2</h3>
+                        <p class="text-sm text-gray-400 uppercase mb-2">Connections & Partnerships</p>
+                        <p class="text-gray-300">Establish connections with business partners to expand the Rice Coin
+                            usage network.</p>
+                    </div>
+
+                    <!-- phase 3 -->
+                    <div class="text-center bg-gray-800 p-6 rounded-lg shadow-md hover:bg-gray-700">
+                        <div class="flex items-center justify-center mb-4 text-red-500">
+                            <i class="bx bx-cog text-5xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2 text-white">Phase 3</h3>
+                        <p class="text-sm text-gray-400 uppercase mb-2">Application of Technology</p>
+                        <p class="text-gray-300">Implementation of staking features and blockchain system improvements
+                            for efficiency and scalability.</p>
+                    </div>
+
+                    <!-- phase 4 -->
+                    <div class="text-center bg-gray-800 p-6 rounded-lg shadow-md hover:bg-gray-700">
+                        <div class="flex items-center justify-center mb-4 text-red-500">
+                            <i class="bx bx-world text-5xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2 text-white">Phase 4</h3>
+                        <p class="text-sm text-gray-400 uppercase mb-2">Global Expansion</p>
+                        <p class="text-gray-300">Rice Coin launch and massive promotion to attract early investors.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Contact section -->
+        <section class="bg-white text-gray-900 dark:bg-gray-900 py-16">
+            <div class="congtainer mx-auto px-4 w-full text-center">
+                <h2 class="text-3xl font-bold mb-4">Contact Us</h2>
+                <p class="text-gray-400 mb-10">We are ready to help you in all matters related to Rice Coin.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mx-1 w-full md:mr-24 ">
+                    <!-- email -->
+                    <div class="bg-gray-800 rounded-lg p-6 shadow-lg hover:bg-gray-700">
+                        <div class="flex items-center justify-center text-blue-400 text-4xl mb-4">
+                            <i class="bx bx-envelope overflow-hidden"></i>
+                        </div>
+                        <h3 class="text-white">Email Address</h3>
+                        <p class="text-gray-400">support@ricecoin.site</p>
+                        <p class="text-gray-400">info@ricecoin.site</p>
+                    </div>
+
+                    <!-- phone -->
+                    <div class="bg-gray-800 rounded-lg p-6 shadow-lg hover:bg-gray-700">
+                        <div class="flex items-center justify-center text-green-400 text-4xl mb-4">
+                            <i class="bx bx-phone"></i>
+                        </div>
+                        <h3 class="text-white">Call Us</h3>
+                        <p class="text-gray-400">+62 812 3456 7890</p>
+                        <p class="text-gray-400">+62 821 9876 5432</p>
+                    </div>
+
+                    <!-- address -->
+                    <div class="bg-gray-800 rounded-lg p-6 shadow-lg hover:bg-gray-700">
+                        <div class="flex items-center justify-center text-yellow-400 text-4xl mb-4">
+                            <i class="bx bx-map"></i>
+                        </div>
+                        <h3 class="text-white">Office Address</h3>
+                        <p class="text-gray-400">Jl. Raya Sukses No. 123</p>
+                        <p class="text-gray-400">Bandung, Indonesia</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- footer -->
+    <footer class="bg-gray-900 text-white py-12"">
+        <div class=" container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
+        <!-- brand section  -->
+        <div>
+            <h3 class="text-2xl font-bold mb-4">Rice Coin</h3>
+            <p class="text-gray-400 mb-4">A digital currency that provides transparent and innovative financial
+                solutions for all.</p>
+            <div class="flex space-x-4">
+                <a href="#" class="text-grey-400 hover:text-blue-400"><i class="bx bxl-twitter text-2xl"></i></a>
+                <a href="#" class="text-grey-400 hover:text-blue-500"><i class="bx bxl-telegram text-2xl"></i></a>
+                <a href="#" class="text-grey-400 hover:text-blue-600"><i class="bx bxl-facebook text-2xl"></i></a>
+                <a href="#" class="text-grey-400 hover:text-orange-500"><i class="bx bxl-reddit text-2xl"></i></a>
+                <a href="#" class="text-grey-400 hover:text-red-600"><i class="bx bxl-youtube text-2xl"></i></a>
+            </div>
+        </div>
+
+        <!-- subscribe section -->
+        <div>
+            <h3 class="text-lg font-semibold mb-4">Subscribe to News</h3>
+            <p class="text-gray-400 mb-4">Get the latest updates about Rice Coin straight to your email.</p>
+            <form action="#" class="flex">
+                <input type="email" placeholder="E-mail"
+                    class="w-full px-4 py-2 rounded-l-lg text-gray-900 focus:outline-none">
+                <button
+                    class="bg-gradient-to-r from-pink-500 to-purple-500 text-white px-4 py-2 rounded-r-lg hover:opacity-90 transition">
+                    Subscribe
+                </button>
+            </form>
+        </div>
+
+        <!-- Quick link -->
+        <div>
+            <h3 class="text-lg font-semibold mb-4">Technology</h3>
+            <ul class="space-y-2 text-gray-400">
+                <li><a href="#" class="hover:text-white">Blockchain Rice Coin</a></li>
+                <li><a href="#" class="hover:text-white">Rice Coin</a></li>
+                <li><a href="#" class="hover:text-white">Staking Marketplace</a></li>
+            </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div>
+            <h3 class="text-lg font-semibold mb-4">Developer</h3>
+            <ul class="space-y-2 text-gray-400">
+                <li>Email: <a href="mailto:support@ricecoin.com" class="hover:text-white">support@ricecoin.site</a></li>
+                <li>Phone: <a href="tel:+620123456789" class="hover:text-white">+62 012-345-6789</a></li>
+                <li>Address: <span class="hover:text-white">Jl. Crypto Indonesia No. 88</span></li>
+            </ul>
+        </div>
+        </div>
+        <div class="border-t border-gray-800 mt-8 pt-6 text-center text-gray-400">
+            <p>&copy; Rice Coin 2024. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="main.js"></script>
+</body>
+
+</html>
